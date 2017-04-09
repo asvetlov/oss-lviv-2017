@@ -50,11 +50,13 @@
             <ul>
               <li>Using Python for 17+ years</li>
               <li>Python Core Developer</li>
-              <li><i>aiohttp</i></li>
-              <li><i>aiopg</i></li>
-              <li><i>aiomysql</i></li>
-              <li><i>multidict</i></li>
-              <li>...</li>
+              <li>aio-libs</li>
+              <ul>
+                <li><i>aiohttp</i></li>
+                <li><i>aiopg</i></li>
+                <li><i>multidict</i></li>
+                <li>...</li>
+              </ul>
             </ul
           </p>
         </section>
@@ -68,17 +70,16 @@
             <img src="Australian_cart.jpg" width="70%"/>
           </section>
           <section>
-            <h2>Non-round tool</h2>
+            <h2>Non-round wheel</h2>
             <img src="huge.jpeg" width="60%"/>
           </section>
         </section>
         <section>
           <h2>Life cycle</h2>
           <ol>
-            <li>Make github project</li>
+            <li>Create github project</li>
             <li>Write code</li>
-            <li>Write...</li>
-            <li>Write...</li>
+            <li>Make it working</li>
             <li>Publish on PyPI</li>
             <li><b><i>Profit???</i></b></li>
           </ol>
@@ -86,7 +87,7 @@
         <section>
           <h2>Criterias</h2>
           <ul>
-            <li>Problem solving</li>
+            <li>Solve real life problem</li>
             <li>Smooth learning curve</li>
             <li>High quality</li>
           </ul>
@@ -240,7 +241,7 @@ class A:
             <ul>
               <p>Write once — read permanently</p>
               <p>Be Pythonic</p>
-              <p class="fragment">Say <b>no</b> to magic overusage</p>
+              <p class="fragment">Say <b>no</b> to overusage of Python magic</p>
             </ul>
           </section>
           <section>
@@ -248,58 +249,9 @@ class A:
             <img src="fake_duck.jpg" width="50%"/>
           </section>
           <section>
-            <h2>Final classes & interfaces</h2>
+            <h2>Final classes + interfaces</h2>
             <h3>vs</h3>
             <h2>Inheritance</h2>
-          </section>
-          <section>
-            <pre><code>
-class BaseHandler:
-    def on_data(self, data): pass
-
-    def write(self, buf): ...
-
-
-class Handler(BaseHandler):
-   def on_data(self, data):
-       self.write(data)
-        
-            </code></pre>
-          </section>
-          <section>
-            <pre><code>
-class BaseHandler:
-    def __init__(self):
-        self._value = 123
-
-    def write(self, data):
-       self._do_write(self._value, data)
-
-class Handler(BaseHandler):
-   def __init__(self):
-       super().__init__()
-       self._value = "ABC"
-
-   def on_data(self, data):
-       print(self._value)
-            </code></pre>
-          </section>
-          <section>
-            <pre><code>
-class HandlerABC(abc.ABC):
-    @abc.abstractmethod
-    def on_data(self, data): pass
-
-class Writer:
-    def write(self, data): ...
-
-class Handler(HandlerABC):
-   def __init__(self, writer):
-       self._writer = writer
-
-   def on_data(self, data):
-       self._writer.write(data)
-            </code></pre>
           </section>
           <section>
             <h2>Deprecation</h2>
